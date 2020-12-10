@@ -84,6 +84,16 @@ form{
     }
   }
 
+  span#loading{
+    display:none;
+    position:absolute;
+    bottom:-10px;
+
+    &.show{
+      display:inline-block;
+    }
+  }
+
 }
 
 .cocktail-grid{
@@ -92,7 +102,7 @@ form{
   justify-content:space-between;
   flex-wrap:wrap;
   width:1000px;
-  margin:1em auto;
+  margin:2em auto;
 
   .cocktail{
     //background:#ccc;
