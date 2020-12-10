@@ -16,6 +16,7 @@ class Form{
             <input type="text" id="cocktailInput" name="cocktailInput" placeholder="Type...">
             <input type="submit" name="cocktailInput" value="search" id="submitBtn">
             <span id="alert">Empty search field!</span>
+            <span id="loading">Loading...</span>
         </form>
         `);
         return this.holder.querySelector("form");
@@ -35,11 +36,7 @@ class Form{
             this.formRef.querySelector('#alert').classList.add('show');
         } else {
             this.data.loading = true;
-            dispatchEvent(this.startSearch);
-            
-            //this.formRef.querySelector('#loading').classList.add('show');
-
-            
+            this.formRef.querySelector('#loading').classList.add('show');
             this.formRef.querySelector('#alert').classList.remove('show');
             fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputValue}`)
             .then(response => response.json())
