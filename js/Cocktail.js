@@ -8,8 +8,9 @@ class Cocktail{
     }
 
     generateIngredients(){
+        //Multiple ingredients are possible. Check all 15 ingredient slots and add to array if not null
         const ingredients = [];
-        for(let i = 1; i < 16; i++){
+        for(let i = 1; i < 15; i++){
            if(this.dataObj[`strIngredient${i}`]){
             ingredients.push(this.dataObj[`strIngredient${i}`]);
            }

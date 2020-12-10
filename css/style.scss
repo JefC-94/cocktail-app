@@ -97,7 +97,7 @@ form{
   .cocktail{
     //background:#ccc;
     width:280px;
-    height:200px;
+    min-height:200px;
     margin:0 0 1em 0;
     display:flex;
     justify-content: space-between;
@@ -146,6 +146,10 @@ form{
     flex-direction: column;
     width:90%;
     align-items: center;
+
+    .cocktail{
+      width:90%;
+    }
   }
 
 }

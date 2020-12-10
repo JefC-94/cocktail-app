@@ -10,9 +10,7 @@ class Cocktails{
 
     createGrid(){
         this.holder.insertAdjacentHTML('beforeend', `
-        <div class="cocktail-grid">
-        Click on search to find cocktails
-        </div>
+        <div class="cocktail-grid">Click on search to find cocktails</div>
         `);
         return this.holder.querySelector('.cocktail-grid');
     }
@@ -26,21 +24,7 @@ class Cocktails{
             this.data.cocktails.forEach((cocktail) => {
                 new Cocktail(this.gridRef, cocktail);
             });
-            /* const cocktaildivs = this.data.cocktails.map(cocktail => {
-                //let ingredients = cocktail.strIngredient[i];
-                return `<div class="cocktail">
-                <div class="info">
-                    <h2>${cocktail.strDrink}</h2>
-                    <p>${cocktail.strCategory}</p>
-                </div>
-                <div class="image">
-                    <img src='${cocktail.strDrinkThumb}'>
-                </div>
-                </div>`;
-            }).join('');
-            this.gridRef.innerHTML = cocktaildivs; */
         }
-        
     }
 
     clearGrid = () => {

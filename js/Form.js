@@ -27,6 +27,8 @@ class Form{
     findCocktails = (e) => {
         e.preventDefault();
         const inputValue = this.formRef.querySelector('#cocktailInput').value;
+        //for some reason the API returns all cocktails when no parameter is given for the search API
+        // -> manually clear the grid and show error
         if(inputValue === ""){
             dispatchEvent(this.clearGrid);
             this.formRef.querySelector('#alert').classList.add('show');
