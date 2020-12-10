@@ -55,7 +55,7 @@ form{
   }
 
   input#submitBtn{
-    padding:.7em 2.4em;
+    width:140px;
     height:40px;
     background:#A9D943;
     color:#1f440e;
@@ -124,7 +124,31 @@ form{
   }
 }
 
+@media screen and (max-width:900px){
 
+  form{
+    flex-direction: column;
+    align-items:center;
+    width:400px;
+
+    input#cocktailInput{
+      margin-right:0;
+      margin-bottom:1em;
+    }
+
+    #submitBtn{
+      width:50px;
+    }
+
+  }
+
+  .cocktail-grid{
+    flex-direction: column;
+    width:90%;
+    align-items: center;
+  }
+
+}
 
 
 footer{

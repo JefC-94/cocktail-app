@@ -10,12 +10,10 @@ class Cocktail{
     generateIngredients(){
         const ingredients = [];
         for(let i = 1; i < 16; i++){
-           //console.log(this.dataObj[`strIngredient${i}`]);
            if(this.dataObj[`strIngredient${i}`]){
             ingredients.push(this.dataObj[`strIngredient${i}`]);
            }
         }
-        console.log(ingredients);
         return ingredients.map(el => `<li>${el}</li>`).join('');
     }
 
