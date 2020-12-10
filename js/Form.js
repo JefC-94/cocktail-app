@@ -5,14 +5,16 @@ class Form{
         this.data = data;
         this.formRef = this.generateForm();
         this.setUpEvents();
-        this.formSubmit = new CustomEvent('formSubmit');
+        this.cocktailSubmit = new CustomEvent('cocktailSubmit');
+        this.clearGrid = new CustomEvent('clearGrid');
     }
 
     generateForm(){
         this.holder.insertAdjacentHTML('beforeend', `
         <form id="searchForm" action="">
-            <input type="text" id="cocktailInput" name="cocktailInput" placeholder="type a name...">
-            <input type="submit" name="cocktailInput" value="zoeken" id="submitBtn">
+            <input type="text" id="cocktailInput" name="cocktailInput" placeholder="Type...">
+            <input type="submit" name="cocktailInput" value="search" id="submitBtn">
+            <span id="alert">Empty search field!</span>
         </form>
         `);
         return this.holder.querySelector("form");
@@ -25,8 +27,19 @@ class Form{
     findCocktails = (e) => {
         e.preventDefault();
         const inputValue = this.formRef.querySelector('#cocktailInput').value;
-        console.log(inputValue);
-        
+        if(inputValue === ""){
+            dispatchEvent(this.clearGrid);
+            this.formRef.querySelector('#alert').classList.add('show');
+        } else {
+            this.formRef.querySelector('#alert').classList.remove('show');
+            fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputValue}`)
+            .then(response => response.json())
+            .then(jsonData => {
+                this.data.cocktails = jsonData.drinks;
+                dispatchEvent(this.cocktailSubmit);
+            })
+            .catch(err => console.log(err));
+        }
     }
 
 }

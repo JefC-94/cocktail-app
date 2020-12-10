@@ -3,7 +3,9 @@ import Footer from './Footer';
 import Form from './Form';
 import Cocktails from './Cocktails';
 
-const data = {};
+const data = {
+    cocktails: []
+};
 
 new Header(document.body, "Cocktail Hour", "Find your favorite cocktails");
 
@@ -11,6 +13,7 @@ new Form(document.body, data);
 
 const cocktails = new Cocktails(document.body, data);
 
-cocktails.addCocktails();
+window.addEventListener('cocktailSubmit', cocktails.addCocktails);
+window.addEventListener('clearGrid', cocktails.clearGrid);
 
 new Footer(document.body, "© Jef Ceuppens");
