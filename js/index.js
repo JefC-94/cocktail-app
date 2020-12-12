@@ -4,8 +4,7 @@ import Form from './Form';
 import Cocktails from './Cocktails';
 
 const data = {
-    cocktails: [],
-    loading: false,
+    cocktails: []
 };
 
 new Header(document.body, "Cocktail Hour", "Find your favorite cocktails");
