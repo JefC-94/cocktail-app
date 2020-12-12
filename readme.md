@@ -1,17 +1,3 @@
-# webstarter kit v1
+# Cocktail App
 
-This setup bootstraps a webfolder with Scss, Postcss, Babel
-
-## Installation
-
-Run this command to install only the dependencies withour dev-dependencies
-
-```bash
-npm install --only=prod
-```
-
-Run this command to install dependencies and dev-dependencies
-
-```bash
-npm install
-```
+[Link to surge](http://jef-cocktail-app.surge.sh/)

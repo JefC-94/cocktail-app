@@ -9,7 +9,7 @@
     "build": "parcel build index.html --out-dir build",
     "build-clean": "rm -rf ./build && parcel build index.html --out-dir build",
     "test-build": "live-server ./build",
-    "deploy": "surge ./build david-syntra-fe2.surge.sh"
+    "deploy": "surge ./build jef-cocktail-app.surge.sh"
   },
   "keywords": [],
   "author": "",
