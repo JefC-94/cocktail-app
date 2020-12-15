@@ -17,4 +17,7 @@ class Header{
     }
 }
 
-export default Header;
+
+
+export default function(holder, h1, tagline){
+    return new Header(holder, h1, tagline)}

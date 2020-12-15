@@ -15,4 +15,4 @@ class footer{
     }
 }
 
-export default footer;
+export default (holder, copyright) => new footer(holder, copyright);

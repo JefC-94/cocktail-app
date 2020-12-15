@@ -36,4 +36,6 @@ class Cocktail{
 
 }
 
-export default Cocktail;
+export default function(holder, dataObj){
+    return new Cocktail(holder, dataObj);
+}

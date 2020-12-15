@@ -33,4 +33,6 @@ class Cocktails{
 
 }
 
-export default Cocktails;
+export default function(holder, data){
+    return new Cocktails(holder, data);
+}

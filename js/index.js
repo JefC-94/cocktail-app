@@ -1,19 +1,19 @@
-import Header from './Header';
-import Footer from './Footer';
-import Form from './Form';
-import Cocktails from './Cocktails';
+import header from './Header';
+import footer from './Footer';
+import form from './Form';
+import cocktails from './Cocktails';
 
 const data = {
     cocktails: []
 };
 
-new Header(document.body, "Cocktail Hour", "Find your favorite cocktails");
+header(document.body, "Cocktail Hour", "Find your favorite cocktails");
 
-const form = new Form(document.body, data);
+const myForm = form(document.body, data);
 
-const cocktails = new Cocktails(document.body, data);
+const myCocktails = cocktails(document.body, data);
 
-window.addEventListener('cocktailSubmit', cocktails.addCocktails);
-window.addEventListener('clearGrid', cocktails.clearGrid);
+window.addEventListener('cocktailSubmit', myCocktails.addCocktails);
+window.addEventListener('clearGrid', myCocktails.clearGrid);
 
-new Footer(document.body, "© Jef Ceuppens");
+footer(document.body, "© Jef Ceuppens");

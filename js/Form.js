@@ -51,4 +51,6 @@ class Form{
 
 }
 
-export default Form;
+export default function(holder, data){
+    new Form(holder, data);
+}
